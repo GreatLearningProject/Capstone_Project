@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+
+<!-- This is the table to display all the items in the Cart -->
+
+<body>
+    <h1>CART ITEMS</h1>
+    <table>
+
+        <tr>
+            <th class="text-align:center"> Product Image</th>
+            <th>Product Details</th>
+            <th>Price</th>
+        </tr>
+
+        <tr *ngFor="let item of dishes">
+
+            <td><img src="assets/{{item.imageurl}}" alt="Aleq" width="160" height="145"></td>
+
+            <td>
+                <h3>{{item.dishname}}</h3>
+                <br>
+                <h3>{{item.dishcost}}</h3>
+            </td>
+
+
+            <td>
+
+                <div class="form-inline">
+                    <button class="btn btn-primary" id={{item.dishid}} (click)="add(item)"><i
+                            class="fa fa-plus"></i></button>
+                    {{item.quantity}}
+                    <button class="btn btn-primary" id={{item.dishid}} (click)="remove(item)"><i
+                            class="fa fa-minus"></i></button>
+
+                </div>
+                
+                <br>
+
+                <div>
+                    <button class="btn btn-primary" (click)="deleteDish(item.dishid)">Remove</button>
+                </div>
+
+                <b>
+                    <h3>
+                        <div class="text-align:center"> {{item.dishcost*item.quantity}}</div>
+                    </h3>
+                </b>
+            </td>
+        </tr>
+
+
+        <tr>
+            <td colspan="10"></td>
+            <td>
+
+                <p>Total Quantity:{{qty}}</p>
+                <p>Total Price:{{price}}</p>
+                <a routerLink="/app-checkout" routerLinkActive="selected"><button class="btn btn-primary"
+                        [disabled]='!service.isLoggedIn()'> Checkout</button></a>
+            </td>
+        </tr>
+
+    </table>
+    
+</body>
+<h1>
+</h1>

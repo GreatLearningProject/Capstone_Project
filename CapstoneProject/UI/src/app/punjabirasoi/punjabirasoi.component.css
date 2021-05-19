@@ -1,0 +1,28 @@
+img {
+  border: 5px solid rgb(3, 2, 5);
+  border-radius: 6px;
+  padding: 5px;
+  height:200px;
+  width: 200px;
+}
+  .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+  }
+  
+  @media only screen and (max-width: 700px){
+    .responsive {
+      width: 49.99999%;
+      margin: 6px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 500px){
+    .responsive {
+      width: 100%;
+    }
+  }
+  h4{
+      text-align: center;
+  }

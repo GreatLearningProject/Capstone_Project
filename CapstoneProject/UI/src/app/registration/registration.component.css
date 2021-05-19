@@ -1,0 +1,17 @@
+head{
+    text-align: center;
+}
+form{
+      
+    background-image: url("/assets/form.jpg");
+    border-color: black;
+    border-radius: 10;
+     }
+
+body{
+    background-image: url("/assets/form.jpg");
+    border-color: black;
+}
+p{
+    text-align: center;
+}

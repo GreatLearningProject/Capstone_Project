@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="text-center">
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<!-- This is Login Form and its Validations -->
+
+<body>
+
+  <div class="bg-info col-sm-12">
+
+    <b>
+      <h1 class="card-title text-center">Sign In</h1>
+    </b>
+
+    <form #loginform="ngForm" (ngSubmit)="loginUser()">
+      <h3><small class="text-danger">{{msg}} </small> </h3>
+
+      <div class="form-group">
+
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="user.email"
+          required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" #email="ngModel"
+          [class.is-invalid]="email.invalid && email.touched">
+
+        <div *ngIf="email.errors && (email.invalid && email.touched)">
+          <small class="text-danger" *ngIf="email.errors.required">Email Id is required</small>
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" placeholder="Enter password" name="password"
+          [(ngModel)]="user.password" required #password="ngModel"
+          [class.is-invalid]="password.invalid && password.touched">
+
+        <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required
+          field</small>
+
+      </div>
+
+      <div class="checkbox">
+        <label><input type="checkbox" name="remember"> Remember me</label>
+      </div>
+
+      <button type="submit" class="btn btn-info">Login</button><br>
+      <b><p class="float-right" [routerLink]="['/registration']">New User ? Register</p></b>
+
+    </form>
+  </div>
+</body>
+
+</html>

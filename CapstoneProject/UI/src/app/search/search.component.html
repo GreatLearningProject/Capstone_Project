@@ -1,0 +1,27 @@
+<!-- This is to Search a particular item we want -->
+
+<form (ngSubmit)="onClick()">
+
+    <input type="text" class="search-text" placeholder="Search for your favourite food..." name="dishname"
+        [(ngModel)]="dishname" required />
+    <button class="btn btn-primary">Search</button>
+</form>
+<br>
+
+<div>
+   <b> <h1> Result for your Search</h1></b>
+    <hr>
+</div>
+
+<div *ngFor="let item of menu">
+
+    <div class="bg-info col-sm-12">
+        <div class="col-md-7">
+            <img src="assets/{{item.imageurl}}"><br>
+            <h4>{{item.dishname}}</h4>
+            <h3>{{item.dishcost | currency: 'INR'}}</h3>
+            <button class="btn btn-primary" [disabled]="isAdded(item)" (click)="OnAddCart(item)">Add to Cart</button>
+        </div>
+
+    </div>
+</div>

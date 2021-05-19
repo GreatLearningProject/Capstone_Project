@@ -1,0 +1,21 @@
+img {
+    border: 5px solid rgb(3, 2, 5);
+    border-radius: 6px;
+    padding: 5px;
+    height:200px;
+    width: 200px;
+  }
+  
+  h4{
+      text-align: center;
+  }
+
+  h3{
+    text-align: center;
+}
+
+.button{
+    text-align: center;
+    position: relative;
+    
+}

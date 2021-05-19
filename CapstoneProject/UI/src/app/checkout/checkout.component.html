@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div>
+    <form Addressform="ngForm" (ngSubmit)="addressDetails()">
+
+      <!-- This is to store the Customer Details -->
+
+      <b>
+        <h1>Customer Details</h1>
+      </b>
+
+      <div class="form-group">
+        <label for="firstname">First Name:</label>
+        <input type="text" class="form-control" placeholder="Enter First Name" name="firstname">
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Last Name:</label>
+        <input type="text" class="form-control" placeholder="Enter Last Name" name="lastname">
+      </div>
+
+      <div class="form-group">
+        <label for="email"> Email:</label>
+        <input type="text" class="form-control" placeholder="Enter Emailid" name="email">
+      </div>
+
+     <!-- This is to store the Address of the Customer -->
+      <b>
+        <h1>Shipping Address</h1>
+      </b>
+
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" class="form-control" placeholder="Enter City" name="city" [(ngModel)]="address.city"
+          #city="ngModel" required [class.is-invalid]="city.invalid && city.touched">
+        <small class="text-danger" [class.d-none]="city.valid || city.untouched">City is required
+          field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country:</label>
+        <input type="text" class="form-control" placeholder="Enter Country" name="country" [(ngModel)]="address.country"
+          #country="ngModel" required [class.is-invalid]="country.invalid && country.touched">
+        <small class="text-danger" [class.d-none]="country.valid || country.untouched">Country is required
+          field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" class="form-control" placeholder="Enter State" name="state" [(ngModel)]="address.state"
+          #state="ngModel" required [class.is-invalid]="state.invalid && state.touched">
+        <small class="text-danger" [class.d-none]="state.valid || state.untouched">State is required
+          field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="country">Street:</label>
+        <input type="street" class="form-control" placeholder="Enter Country" name="street" [(ngModel)]="address.street"
+          #street="ngModel" required [class.is-invalid]="street.invalid && street.touched">
+        <small class="text-danger" [class.d-none]="street.valid || street.untouched">Street is required
+          field</small>
+      </div>
+
+      <div class="form-group">
+        <label for="zipcode">Zip Code:</label>
+        <input type="text" class="form-control" placeholder="Enter ZipCode" name="zipcode" [(ngModel)]="address.zipcode"
+          #zipcode="ngModel" required [class.is-invalid]="zipcode.invalid && zipcode.touched">
+        <small class="text-danger" [class.d-none]="zipcode.valid || zipcode.untouched">ZipCode is required
+          field</small>
+      </div>
+
+      <!-- This is to store the Cart Details of Customer -->
+
+      <b>
+        <h1>Credit Card</h1>
+      </b>
+
+      <div class="form-group">
+        <label for="cardtype"> Card Type:</label>
+        <input type="text" class="form-control" placeholder="Card Type" name="cardtype">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name on Card:</label>
+        <input type="text" class="form-control" placeholder="Name on Card" name="cardname">
+      </div>
+
+      <div class="form-group">
+        <label for="cardno">Card Number:</label>
+        <input type="text" class="form-control" placeholder="Card No" name="cardno">
+      </div>
+
+      <div class="form-group">
+        <label for="securitycode">Security Code:</label>
+        <input type="text" class="form-control" placeholder="Security code" name="security code">
+      </div>
+
+      <button type="submit" class="btn btn-info" [routerLink]="['/']" (click)='addressDetails()'>Place
+        Order</button><br>
+      <p class="float-right" [routerLink]="['/app-cart']">Forgot Something to Order ? Go to Cart</p>
+
+
+    </form>
+  </div>
+</body>

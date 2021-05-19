@@ -1,0 +1,19 @@
+
+<!-- We are getting all the items that present in EatNRepeat from Database -->
+<div *ngFor="let menu of items | async">
+
+    <div class="col-md-7">
+        <div class="imageurl">
+            <img src="assets/{{menu.imageurl}}" alt="Aleq" width="160" height="145"><br>
+        </div>
+        <div class="text-align:center">
+            <b>
+                <h3>{{menu.dishname}}</h3>
+            </b>
+            <b>
+                <h3>{{menu.dishcost | currency: 'INR'}}</h3>
+            </b>
+            <button class="btn btn-primary" [disabled]="isAdded(menu)" (click)="OnAddCart(menu)">Add to Cart</button>
+        </div>
+    </div>
+</div>

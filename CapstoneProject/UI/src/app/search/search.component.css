@@ -1,0 +1,23 @@
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    height:200px;
+    width: 200px;
+  }
+  input{
+    float: left;
+    padding: 3px;
+    border: none;
+    margin-top: 0px;
+    margin-right: 0px;
+    font-size: 20px;
+  }
+  h2{
+      text-align: center;
+  }
+  button{
+    margin-top: 0px;
+    margin-right: 0px;
+    font-size: 20px;
+  }

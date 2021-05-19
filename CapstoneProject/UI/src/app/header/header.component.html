@@ -1,0 +1,42 @@
+<nav class="navigation">
+  <header class="header">
+    <img src="assets/logo1.jpg" class="image">
+
+
+    <!-- This is for Searching a particular Item we want -->
+
+    <div class="col-sm-1" style=" margin-top: 22px;">
+      <a routerLink="/app-search" button type="btn btn-login" class="btn btn-info">Search</a>
+    </div>
+
+    <!-- This is to display total-quantity and total-price of the cart -->
+
+    <div class="col-sm-1" style=" margin-top: 22px;">
+      <span class="span1">{{qty1}}</span>
+      <span class="span2">{{qty2}}</span>
+      &nbsp;<a routerLink="/app-cart" class="fa fa-shopping-cart"
+        style="font-size:30px;margin-left:5px;margin-top:10px;color:rgb(0, 197, 43)"></a>
+    </div>
+
+
+    <!-- These are Login Logout and Registration Buttons -->
+    
+    <div>
+      <a *ngIf='!service.isLoggedIn()' routerLink='login' class="nav-link" routerLinkActive="active"><button
+          class="btn btn-login"> Login</button></a>
+    
+      <a *ngIf='!service.isLoggedIn()' routerLink='register' class="nav-link" routerLinkActive="active"> <button
+          class="btn btn-login">Register</button></a>
+    </div>
+
+    <div>
+      <h2 *ngIf='service.isLoggedIn()' class="welcome" style="font-size:20px;margin-top:10px;color:rgb(0, 184, 197)">
+        Welcome {{email1}} </h2>
+    
+    <a routerLink='logout' *ngIf='service.isLoggedIn()' class="nav-link" routerLinkActive="active">
+      <button (click)='service.logout()' class="btn btn-login">Logout</button></a>
+    </div>
+
+
+  </header>
+</nav>
